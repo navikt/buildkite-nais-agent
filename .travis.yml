@@ -1,9 +1,13 @@
-language: ruby
-rvm:
-- 2.0.0
-- 1.9.3
-- jruby-19mode
-- rbx-2
+sudo: required
+language: minimal
+services:
+- docker
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: bash docker_push.sh
+  on:
+    branch: master
 env:
   global:
   - secure: i4AQG8difYG6DfWJZcl+knpTpu1NbE9KzDCs74HC1yGcRni8a5zLggK41fuQ8kF8QXdi4qD5AV7s5hPtyGOYXj4QIIc0z2ccTF9wVlGScHvlLYnPml8OIKCB34vp4fqmAlILOokyOeG8Xrt7oF5qqbcMJ2TdZb54tWwDcaGvQ2Mytm9UJON13RJoJCnV5pQNnB/9lmupeEeauvV9AjTqPPF4IgYmxAQLi+a6NpqJsLpDKgVsZTO1oEpssOGup3Xk5MVP4toUhsMFFobljfTZiOwc8L4Gpmser9scUhjof4+wjHN6OdfdxVzabrfLew1TPjDW+jR13jgb9YE+mqF368cvoLWcgl41Q2eGpm2Wbwn7Iv/wL5i1+OUzuSYrks4KZ1MAYjm9u+1ihx/Is5XSIlguwzHVb1KcDbo6yb7QgIg+If+jyxDcSpu6oAg3L5qCkdRxOhmEfIug1R0STMrkFnwDYyB6jgSkHFZCYKuTiB45hIgE3kF5UHqwDIU1qkm0GDY9wdU3f2U+14k+orkGGZUEnSV1hGoc2AX2CtdK1kd+pRubosuGpf6VV/uQSmPsIagQO6iP2A0bNAodw6UzfoHkd0/Ul/vvv3mcykjFNyd2TFLoEJtN93NgawnO0dBWtx9Vp/jBM/4F2YrNyD6W1HtfysHEtsTIhKs9Fw6sVXo=
